@@ -2,7 +2,6 @@
 
 import { Request, Response, NextFunction } from 'express';
 import { ZodSchema, ZodError } from 'zod';
-import { ValidationError } from '../utils/errors.js';
 
 export const validate = (schema: ZodSchema) => {
   return (req: Request, res: Response, next: NextFunction): void => {
@@ -23,7 +22,7 @@ export const validate = (schema: ZodSchema) => {
           message: err.message,
         }));
         
-        next(new ValidationError(JSON.stringify(formattedErrors)));
+        
       } else {
         next(error);
       }
