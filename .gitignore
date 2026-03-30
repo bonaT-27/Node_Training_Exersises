@@ -3,3 +3,8 @@ dist/
 .env
 *.log
 .DS_Store
+coverage/
+.idea/
+.vscode/
+*.iml
+package-lock.json
